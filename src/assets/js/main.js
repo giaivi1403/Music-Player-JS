@@ -176,12 +176,21 @@ class App {
             _this.banner.style.opacity = newWidth / oldWidth;
         });
 
+        // rotate disk
+        const animate = _this.bannerImg.animate(
+            { transform: "rotate(360deg)" },
+            { iterations: Infinity, duration: 10000 }
+        );
+        animate.pause();
+
         // Handle play and pause audio
         this.playButton.addEventListener("click", (e) => {
             if (_this.isPlaying) {
                 _this.audio.pause();
+                animate.pause();
             } else {
                 _this.audio.play();
+                animate.play();
             }
         });
 
