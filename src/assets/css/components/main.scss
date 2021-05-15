@@ -43,6 +43,9 @@ body {
 .player {
     width: 480px;
     margin: 30px auto;
+    @include max-breakpoint(425) {
+        width: 90%;
+    }
     .btn-pause {
         display: none;
     }
@@ -58,6 +61,9 @@ body {
         padding: 50px;
         border-radius: 10px;
         background-color: #fff;
+        @include max-breakpoint(425) {
+            padding: 15px;
+        }
         .header {
             text-align: center;
             span {
@@ -151,6 +157,9 @@ body {
                 }
                 .info__name {
                     font-size: 20px;
+                    @include max-breakpoint(425) {
+                        font-size: 16px;
+                    }
                 }
             }
             &-option {
