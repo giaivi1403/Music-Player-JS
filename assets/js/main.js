@@ -187,10 +187,8 @@ class App {
         this.playButton.addEventListener("click", (e) => {
             if (_this.isPlaying) {
                 _this.audio.pause();
-                animate.pause();
             } else {
                 _this.audio.play();
-                animate.play();
             }
         });
 
@@ -198,12 +196,14 @@ class App {
         this.audio.addEventListener("play", (e) => {
             _this.isPlaying = true;
             _this.player.classList.add("playing");
+            animate.play();
         });
 
         // Listen when audio pause
         this.audio.addEventListener("pause", (e) => {
             _this.isPlaying = false;
             _this.player.classList.remove("playing");
+            animate.pause();
         });
 
         // Update process UI
@@ -232,11 +232,11 @@ class App {
 
                     // wait loaded song until can play
                     _this.audio.addEventListener(
-                        "loadeddata",
+                        "loadedmetadata",
                         function forcePlay() {
                             _this.audio.play();
                             _this.audio.removeEventListener(
-                                "loadeddata",
+                                "loadedmetadata",
                                 forcePlay
                             );
                         }
@@ -268,7 +268,9 @@ class App {
                 _this.curIndex = _this.randomIndex();
                 _this.setLocalStorage("curIndex", _this.curIndex);
                 _this.renderCurrentSong();
-                this.play();
+                _this.audio.onloadedmetadata = () => {
+                    _this.playButton.click();
+                };
             } else {
                 _this.nextButton.click();
             }
@@ -334,7 +336,7 @@ class App {
             this.curIndex = 0;
         }
         this.setLocalStorage("curIndex", this.curIndex);
-        this.audio.onloadeddata = () => {
+        this.audio.onloadedmetadata = () => {
             this.audio.play();
         };
     }
@@ -346,7 +348,7 @@ class App {
             this.curIndex = this.songs.length - 1;
         }
         this.setLocalStorage("curIndex", this.curIndex);
-        this.audio.onloadeddata = () => {
+        this.audio.onloadedmetadata = () => {
             this.audio.play();
         };
     }
