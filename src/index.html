@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player JS</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rangeslider-js@3.2.5/dist/styles.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="player">
+        <div class="dashboard">
+          <div class="header"> <span>Now playing</span>
+            <h2> </h2>
+          </div>
+          <div class="banner">
+            <div class="banner__img"></div>
+          </div>
+          <div class="control">
+            <div class="control__repeat"><a class="btn btn-repeat"><i class="fas fa-redo"></i></a></div>
+            <div class="control__previous"><a class="btn btn-previous"><i class="fas fa-backward"></i></a></div>
+            <div class="control__toggle-play"><a class="btn btn-play"><i class="fas fa-play"></i></a><a class="btn btn-pause"><i class="fas fa-pause"></i> </a></div>
+            <div class="control__next"><a class="btn btn-next"><i class="fas fa-forward"></i></a></div>
+            <div class="control__shuffel"><a class="btn btn-shuffle"><i class="fas fa-random"></i></a></div>
+          </div>
+          <div class="range-slider-wrapper">
+            <input class="range-slider-input process" type="range">
+          </div>
+          <audio class="audio" src=""> </audio>
+        </div>
+        <ul class="playlists"></ul>
+        <div style="height: 30px"></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rangeslider-js@3.2.5/dist/rangeslider-js.min.js"> </script>
+  <script src="./assets/js/main.js" type="module"></script>
+</html>

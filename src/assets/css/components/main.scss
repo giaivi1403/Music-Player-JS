@@ -1,0 +1,181 @@
+$primary-color: #ec1f55;
+$text-color: #333;
+
+* {
+    font-size: 16px;
+    color: $text-color;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+        color: $text-color;
+        font-size: 20px;
+    }
+    &.btn-play,
+    &.btn-pause {
+        background-color: $primary-color;
+        border-radius: 100%;
+        i {
+            color: #fff;
+        }
+    }
+    &.red {
+        i {
+            color: $primary-color;
+        }
+    }
+    &.btn-option {
+        i {
+            color: #fff;
+        }
+    }
+}
+
+.player {
+    width: 480px;
+    margin: 30px auto;
+    .btn-pause {
+        display: none;
+    }
+    &.playing {
+        .btn-play {
+            display: none;
+        }
+        .btn-pause {
+            display: flex;
+        }
+    }
+    .dashboard {
+        padding: 50px;
+        border-radius: 10px;
+        background-color: #fff;
+        .header {
+            text-align: center;
+            span {
+                color: $primary-color;
+                font-weight: 500;
+            }
+            h2 {
+                margin: 10px 0;
+                font-size: 30px;
+                font-weight: 500;
+            }
+        }
+        .control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0 20px;
+        }
+        .range-slider-wrapper {
+            position: relative;
+            .rangeslider__fill,
+            .rangeslider__handle {
+                background-color: $primary-color !important;
+            }
+            .rangeslider__fill,
+            .rangeslider__fill__bg {
+                height: 8px;
+            }
+            .rangeslider__handle {
+                top: 66%;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    .banner {
+        display: flex;
+        margin: auto;
+        width: 200px;
+        &__img {
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 50%;
+            background-color: #333;
+            background-size: cover;
+            margin: auto;
+        }
+    }
+    .playlists {
+        padding: 0 10px;
+        max-height: 800px;
+        overflow-y: scroll;
+        margin: 30px 0;
+        &__song {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &.active {
+                background-color: $primary-color;
+
+                .playlists__song {
+                    &-info {
+                        .info__name,
+                        .info__author {
+                            color: #fff;
+                        }
+                    }
+                }
+                i {
+                    color: #fff !important;
+                }
+            }
+            &-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                margin: 0;
+                margin-right: 20px;
+            }
+            &-info {
+                .info__name,
+                .info__author {
+                    color: $text-color;
+                }
+                .info__name {
+                    font-size: 20px;
+                }
+            }
+            &-option {
+                margin-left: auto;
+                i {
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+.playlists::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.playlists::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+}
+
+.playlists::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}

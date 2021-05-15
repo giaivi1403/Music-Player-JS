@@ -1,0 +1,33 @@
+.player
+    .dashboard
+        .header 
+            span Now playing
+            h2 
+        .banner
+            div.banner__img
+        .control
+            .control__repeat
+                a(class="btn btn-repeat")
+                    <i class="fas fa-redo"></i>
+            .control__previous
+                a(class="btn btn-previous")
+                    <i class="fas fa-backward"></i>
+            .control__toggle-play
+                a(class="btn btn-play")
+                    <i class="fas fa-play"></i>
+                a(class="btn btn-pause")
+                    <i class="fas fa-pause"></i> 
+            .control__next
+                a(class="btn btn-next")
+                    <i class="fas fa-forward"></i>
+            .control__shuffel
+                a(class="btn btn-shuffle")
+                    <i class="fas fa-random"></i>
+        .range-slider-wrapper
+            input.range-slider-input.process(type="range")
+        audio(src="").audio 
+    ul.playlists
+    div(style="height: 30px")
+ 
+
+             
